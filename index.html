@@ -120,8 +120,8 @@
       height: 72px;
     }
     .nav-logo img { height: 32px; transition: filter .3s; }
-    .nav-logo img { filter: brightness(0) invert(1); transition: filter .4s ease; }
-    nav.scrolled .nav-logo img { filter: none; }
+    .nav-logo img { opacity: 0; transition: opacity .4s ease; }
+    nav.scrolled .nav-logo img { opacity: 1; }
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
       font-size: .85rem; font-weight: 500;
@@ -411,7 +411,7 @@
     }
     footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px; }
     .footer-left { max-width: 320px; }
-    .footer-left img { height: 28px; filter: brightness(0) invert(.6); margin-bottom: 12px; }
+    .footer-left img { height: 28px; filter: brightness(0) invert(1); margin-bottom: 12px; }
     .footer-left p { line-height: 1.7; }
     .footer-right { display: flex; gap: 48px; flex-wrap: wrap; }
     .footer-col h4 {
