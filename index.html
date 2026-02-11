@@ -120,14 +120,15 @@
       height: 72px;
     }
     .nav-logo img { height: 32px; transition: filter .3s; }
-    nav:not(.scrolled) .nav-logo img { filter: brightness(0) invert(1); }
+    .nav-logo img { filter: brightness(0) invert(1); transition: filter .4s ease; }
+    nav.scrolled .nav-logo img { filter: none; }
     .nav-links { display: flex; gap: 36px; list-style: none; }
     .nav-links a {
       font-size: .85rem; font-weight: 500;
       transition: color .3s; position: relative;
     }
-    nav:not(.scrolled) .nav-links a { color: rgba(255,255,255,.8); }
-    nav:not(.scrolled) .nav-links a:hover { color: #fff; }
+    .nav-links a { color: rgba(255,255,255,.8); transition: color .4s ease; }
+    .nav-links a:hover { color: #fff; }
     nav.scrolled .nav-links a { color: #64748b; }
     nav.scrolled .nav-links a:hover { color: #ea580c; }
     .nav-links a::after {
@@ -136,8 +137,10 @@
     }
     .nav-links a:hover::after { width: 100%; }
     .nav-cta .btn { padding: 10px 24px; font-size: .82rem; }
-    nav:not(.scrolled) .nav-cta .btn-primary { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(8px); box-shadow: none; }
-    nav:not(.scrolled) .nav-cta .btn-primary:hover { background: rgba(255,255,255,.25); }
+    .nav-cta .btn-primary { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(8px); box-shadow: none; transition: all .4s ease; }
+    .nav-cta .btn-primary:hover { background: rgba(255,255,255,.25); }
+    nav.scrolled .nav-cta .btn-primary { background: linear-gradient(135deg, #ea580c, #f97316); border-color: transparent; box-shadow: 0 4px 20px rgba(234,88,12,.3); }
+    nav.scrolled .nav-cta .btn-primary:hover { box-shadow: 0 8px 30px rgba(234,88,12,.45); }
     .nav-mobile { display: none; background: none; border: none; cursor: pointer; color: #fff; }
     nav.scrolled .nav-mobile { color: #0f172a; }
     .nav-mobile svg { width: 24px; height: 24px; }
@@ -285,7 +288,7 @@
     .services .header .section-label { justify-content: center; }
     .services .header .section-sub { margin: 0 auto; }
     .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
     }
     .service-card {
       background: #fff;
@@ -333,7 +336,7 @@
     .trust .header .section-sub { color: rgba(255,255,255,.5); margin: 0 auto; }
     .trust .section-title { color: #fff; }
     .trust-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
       position: relative; z-index: 1;
     }
     .trust-item {
@@ -562,20 +565,7 @@
           <span>Digitales Dokumentenmanagement für schnellen Zugriff und rechtssichere Archivierung.</span>
         </div>
       </div>
-      <div class="problem-item fade-up fade-up-delay-3">
-        <div class="problem-icon"><svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
-        <div class="problem-text">
-          <strong>Hohe Druck- & Outputkosten</strong>
-          <span>Optimierte Output-Lösungen, die Kosten senken und Abläufe vereinfachen.</span>
-        </div>
-      </div>
-      <div class="problem-item fade-up fade-up-delay-4">
-        <div class="problem-icon"><svg fill="none" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
-        <div class="problem-text">
-          <strong>Fehlende Eigenentwicklungen</strong>
-          <span>ORGAPHON, SpeedIndexer, FIT, Mailarchiver – maßgeschneidert für Ihre Prozesse.</span>
-        </div>
-      </div>
+<!-- removed for minimal design -->
     </div>
   </div>
 </section>
@@ -609,16 +599,7 @@
         <h3>Output Management</h3>
         <p>Druck- und Output-Lösungen, die Kosten optimieren und Dokumentenausgang vereinfachen.</p>
       </div>
-      <div class="service-card fade-up fade-up-delay-4">
-        <div class="service-icon"><svg fill="none" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
-        <h3>Eigene Produkte</h3>
-        <p>ORGAPHON, SpeedIndexer, FIT, Mailarchiver, CodeNamer – für Ihre speziellen Anforderungen.</p>
-      </div>
-      <div class="service-card fade-up fade-up-delay-5">
-        <div class="service-icon"><svg fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <h3>Beratung & Betreuung</h3>
-        <p>Von der Strategie bis zur Umsetzung – langfristiger Support, auf den Sie sich verlassen können.</p>
-      </div>
+<!-- minimal: 4 cards -->
     </div>
   </div>
 </section>
@@ -652,16 +633,7 @@
         <h4>Langfristige Partnerschaft</h4>
         <p>Konstruktive Zusammenarbeit statt Projektabschluss. Gemeinsam neue Themengebiete erschließen.</p>
       </div>
-      <div class="trust-item fade-up fade-up-delay-4">
-        <div class="trust-num">05</div>
-        <h4>Zwei Standorte</h4>
-        <p>Hauptsitz Mainz, Niederlassung Kaiserslautern – persönliche Betreuung vor Ort.</p>
-      </div>
-      <div class="trust-item fade-up fade-up-delay-5">
-        <div class="trust-num">06</div>
-        <h4>Alles aus einer Hand</h4>
-        <p>TK, IT, DMS, Output und eigene Software – perfekt aufeinander abgestimmt.</p>
-      </div>
+<!-- minimal: 4 trust items -->
     </div>
   </div>
 </section>
